@@ -1,0 +1,22 @@
+{
+  "name": "angular-1.5-chartjs-express-boilerplate",
+  "version": "1.0.0",
+  "description": "Angular 1.5+ with ChartJS components and an express back-end",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgefkiaras/Angular-1.5-ChartJS-Express-Boilerplate.git"
+  },
+  "author": "GeorgeF",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgefkiaras/Angular-1.5-ChartJS-Express-Boilerplate/issues"
+  },
+  "homepage": "https://github.com/georgefkiaras/Angular-1.5-ChartJS-Express-Boilerplate#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
