@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="../dark.css" ng-if="model.darkTheme" />
+<link rel="stylesheet" href="../cssOverrides.css" ng-if="model.darkTheme" />
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand" href="/">
+                    Angular Boilerplate
+                </a>
+
+
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a data-toggle="collapse" data-target=".navbar-collapse.in" ng-link="['ChartExample']">Chart Example</a>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                        Theme
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a data-toggle="collapse" data-target=".navbar-collapse.in" ng-click="model.setDarkTheme(false);" href="">Light</a>
+                        </li>
+                        <li ng-click="model.dark = true;">
+                            <a data-toggle="collapse" data-target=".navbar-collapse.in" ng-click="model.setDarkTheme(true);" href="">Dark</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container body-content">
+    <img src="../../images/ajaxLoaderArrows.gif" alt="Loading..." class="ajaxLoader quickFade" loading-indicator />
+
+    <div uib-collapse="!model.hasError" class="alert alert-danger">
+        <h2>
+            <span class="glyphicon glyphicon-warning-sign"></span>
+            Error
+        </h2>
+        <p>{{model.errorData}}</p>
+        <p>{{model.errorText}}</p>
+    </div>
+    <ng-outlet></ng-outlet>
+</div>

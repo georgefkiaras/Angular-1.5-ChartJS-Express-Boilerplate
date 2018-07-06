@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="/" />
+  <title>Angular Boilerplate With Chart</title>
+  <link rel="stylesheet" href="libraries.css" />
+  <link rel="stylesheet" href="site.css" />
+  <script>
+    var BoilerplateDefaults = BoilerplateDefaults || {};
+    BoilerplateDefaults.isIE = false;
+    //Set a flag for IE mode.  We will use it to disable HTML5 routing
+    if (navigator.userAgent.indexOf('MSIE') !== -1
+      || navigator.appVersion.indexOf('Trident/') > 0) {
+      BoilerplateDefaults.isIE = true;
+    }
+  </script>
+
+</head>
+
+<body ng-app="boilerplateModule">
+  <div class="app-container" ng-cloak="">
+    <boilerplate-root></boilerplate-root>
+  </div>
+  <hr />
+  <div class="container">
+    <footer>
+      <p>&copy; 2018 - Juniuslabs</p>
+    </footer>
+  </div>
+
+  <script src="libraries.js"></script>
+  <%if(devEnv) { %>
+    <!--reference files individually in DEV mode-->
+    <script src="app/Common/chart.afterDatasetsDraw.plugin.js"></script>
+    <script src="app/Common/loading-indicator.module.js"></script>
+
+    <script src="app/module.js"></script>
+    <script src="app/boilerplate-root.component.js"></script>
+    <script src="app/DashComponents/Common/chart.component.js"></script>
+    <script src="app/DashComponents/chart-example.component.js"></script>
+    <% } %>
+      <% if(!devEnv) { %>
+        <script src="app.js"></script>
+        <% } %>
+
+
+
+</body>
+
+</html>

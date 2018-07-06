@@ -1,22 +1,47 @@
 {
-  "name": "angular-1.5-chartjs-express-boilerplate",
+  "name": "api",
   "version": "1.0.0",
-  "description": "Angular 1.5+ with ChartJS components and an express back-end",
-  "main": "app.js",
+  "description": "boilerplate example with chart",
+  "main": "./bin/www",
   "scripts": {
-    "start": "node app.js"
+    "test": "SET NODE_ENV=development && nodemon ./bin/www",
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/georgefkiaras/Angular-1.5-ChartJS-Express-Boilerplate.git"
-  },
-  "author": "GeorgeF",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/georgefkiaras/Angular-1.5-ChartJS-Express-Boilerplate/issues"
-  },
-  "homepage": "https://github.com/georgefkiaras/Angular-1.5-ChartJS-Express-Boilerplate#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "angular": "^1.6.9",
+    "angular-animate": "^1.6.9",
+    "angular-chart.js": "^1.1.1",
+    "angular-cookies": "^1.6.9",
+    "angular-ui-bootstrap": "^2.5.6",
+    "angularjs-slider": "^6.5.0",
+    "app-root-path": "^2.0.1",
+    "babel-polyfill": "^6.26.0",
+    "basic-auth": "^2.0.0",
+    "bootstrap": "^3.0",
+    "chart.js": "^2.7.2",
+    "compression": "^1.7.2",
+    "ejs": "^2.5.9",
+    "express": "^4.16.3",
+    "express-status-monitor": "^1.0.1",
+    "helmet": "^3.12.0",
+    "jquery": "^3.3.1",
+    "memory-cache": "^0.2.0",
+    "morgan": "^1.9.0",
+    "winston": "^2.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "grunt": "^1.0.2",
+    "grunt-babel": "^7.0.0",
+    "grunt-concat-css": "^0.3.2",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-uglify": "^3.3.0"
   }
 }

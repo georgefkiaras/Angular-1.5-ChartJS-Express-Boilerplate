@@ -1,0 +1,157 @@
+<div ng-if="model.noData();">
+    <h2>
+        No Data
+        <span class="glyphicon glyphicon-ban-circle"></span>    
+    </h2>
+</div>
+<div>
+    <canvas class="chart chart-bar" chart-data="model.data" chart-labels="model.labels" chart-series="model.series" chart-options="model.options"
+        chart-type="model.type" chart-click="model.onClick" chart-colors="model.colors" chart-dataset-override="model.datasetOverride">
+    </canvas>
+</div>
+
+<div class="spacer"></div>
+<br />
+<div class="row">
+    <div class="visible-xs">
+        <div class="col-xs-12 text-center">
+
+            <!-- <div class="btn-group"> -->
+                <div class="container">
+                    <button 
+                        type="button" 
+                        class="btn btn-success graphToggleButton btn-sm" 
+                        ng-if="model.chartType != 'line'" 
+                        ng-click="model.toggleChartType('line')">
+                        Set Line Graph
+                        <span class="glyphicon glyphicon-random"></span>
+                    </button>
+                    <button 
+                        type="button" 
+                        class="btn btn-success graphToggleButton btn-sm" 
+                        ng-if="model.chartType != 'bar'" 
+                        ng-click="model.toggleChartType('bar')">
+                        Set Bar Graph
+                        <span class="glyphicon glyphicon-stats"></span>
+                    </button>
+        
+                    <button type="button" class="btn btn-success graphToggleButton btn-sm" ng-if="!model.fixedAxis" ng-click="model.toggleFixedAxis()">
+                        Set {{model.chartData.min}} - {{model.chartData.max}} Fixed Y-Axis
+                    </button>
+                    <button type="button" class="btn btn-success graphToggleButton btn-sm" ng-if="model.fixedAxis" ng-click="model.toggleFixedAxis()">
+                        Set Auto Y-Axis
+                    </button>
+                </div>
+
+            <!-- </div> -->
+    
+            <!-- <div class="btn-group" role="group"> -->
+                <button 
+                    type="button" 
+                    class="btn  btn-sm smallGraphToggleButton" 
+                    ng-class="{'btn-default' : !model.stacked, 'btn-success' : model.stacked}" 
+                    ng-click="model.toggleStacked()"
+                    ng-if="model.data.length > 1 && model.disableStacked != true">
+    
+                    <span ng-if="!model.stacked">Stack</span>
+                    <span ng-if="model.stacked">Un-Stack</span>
+                </button>
+                <button 
+                    type="button" 
+                    class="btn  btn-sm smallGraphToggleButton" 
+                    ng-class="{'btn-default' : !model.fill, 'btn-success' : model.fill}" ng-click="model.toggleFill()"
+                    ng-if="model.chartType == 'line'">
+                    <span ng-if="!model.fill">Fill</span>
+                    <span ng-if="model.fill">Un-Fill</span>
+                </button>
+                <button 
+                    type="button" 
+                    class="btn btn-success btn-sm smallGraphToggleButton" 
+                    ng-if="model.chartType == 'line' && model.options.plotLabelOptions.hideAll" 
+                    ng-click="model.options.plotLabelOptions.hideAll = !model.options.plotLabelOptions.hideAll">
+                    Show Labels
+                </button>
+                <button 
+                    type="button" 
+                    class="btn btn-default btn-sm smallGraphToggleButton" 
+                    ng-if="model.chartType == 'line' && !model.options.plotLabelOptions.hideAll" 
+                    ng-click="model.options.plotLabelOptions.hideAll = !model.options.plotLabelOptions.hideAll">
+                    Hide Labels
+                </button>
+            </div>
+            <!-- <button type="button" class="btn btn-info pull-right" ng-click="model.resetGraph()" ng-if="model.showResetButton()">
+                Reset Graph
+            </button> -->
+        <!-- </div> -->
+    </div>
+    
+    <div class="hidden-xs">
+            <div class="col-xs-12 text-left graph-options-holder">
+
+                    <div class="btn-group">
+                        <button 
+                            type="button" 
+                            class="btn btn-success graphToggleButton btn-sm" 
+                            ng-if="model.chartType != 'line'" 
+                            ng-click="model.toggleChartType('line')">
+                            Set Line Graph
+                            <span class="glyphicon glyphicon-random"></span>
+                        </button>
+                        <button 
+                            type="button" 
+                            class="btn btn-success graphToggleButton btn-sm" 
+                            ng-if="model.chartType != 'bar'" 
+                            ng-click="model.toggleChartType('bar')">
+                            Set Bar Graph
+                            <span class="glyphicon glyphicon-stats"></span>
+                        </button>
+            
+                        <button type="button" class="btn btn-success graphToggleButton btn-sm" ng-if="!model.fixedAxis" ng-click="model.toggleFixedAxis()">
+                            Set {{model.chartData.min}} - {{model.chartData.max}} Fixed Y-Axis
+                        </button>
+                        <button type="button" class="btn btn-success graphToggleButton btn-sm" ng-if="model.fixedAxis" ng-click="model.toggleFixedAxis()">
+                            Set Auto Y-Axis
+                        </button>
+                    </div>
+            
+                    <div class="btn-group" role="group">
+                        <button 
+                            type="button" 
+                            class="btn  btn-sm smallGraphToggleButton graphToggleButton" 
+                            ng-class="{'btn-default' : !model.stacked, 'btn-success' : model.stacked}" 
+                            ng-click="model.toggleStacked()"
+                            ng-if="model.data.length > 1 && model.disableStacked != true">
+            
+                            <span ng-if="!model.stacked">Stack</span>
+                            <span ng-if="model.stacked">Un-Stack</span>
+                        </button>
+                        <button 
+                            type="button" 
+                            class="btn  btn-sm smallGraphToggleButton graphToggleButton" 
+                            ng-class="{'btn-default' : !model.fill, 'btn-primary' : model.fill}" ng-click="model.toggleFill()"
+                            ng-if="model.chartType == 'line'">
+                            <span ng-if="!model.fill">Fill</span>
+                            <span ng-if="model.fill">Un-Fill</span>
+                        </button>
+                        <button 
+                            type="button" 
+                            class="btn btn-primary btn-sm smallGraphToggleButton" 
+                            ng-if="model.chartType == 'line' && model.options.plotLabelOptions.hideAll" 
+                            ng-click="model.options.plotLabelOptions.hideAll = !model.options.plotLabelOptions.hideAll">
+                            Show Labels
+                        </button>
+                        <button 
+                            type="button" 
+                            class="btn btn-default btn-sm smallGraphToggleButton" 
+                            ng-if="model.chartType == 'line' && !model.options.plotLabelOptions.hideAll" 
+                            ng-click="model.options.plotLabelOptions.hideAll = !model.options.plotLabelOptions.hideAll">
+                            Hide Labels
+                        </button>
+                    </div>
+                    <!-- <button type="button" class="btn btn-info pull-right" ng-click="model.resetGraph()" ng-if="model.showResetButton()">
+                        Reset Graph
+                    </button> -->
+                </div>        
+    </div>
+
+</div> 

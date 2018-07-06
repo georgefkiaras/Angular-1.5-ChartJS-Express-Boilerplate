@@ -1,0 +1,59 @@
+body{
+    padding-top: 95px;
+    padding-bottom: 20px;
+    overflow:scroll;
+}
+
+.spacer{
+    display:block;
+    height: 0px;
+    margin: 5px 0px 5px 0px;
+}
+
+.ajaxLoader {
+    position: fixed;
+    box-sizing: content-box;
+    top: 50%;
+    right: 50%;
+    border-radius: 40px;
+    border: 2px solid #f0ad4e;
+    background-color: white;
+    padding: 3px;
+    width: 16px;
+    height: 16px;
+    z-index: 3000;
+}
+
+.chart{
+    /* border: 1px solid red; */
+    min-height: 300px;
+}
+
+.graph-options-holder {
+    padding-left: 75px;
+}
+
+
+.graphToggleButton{
+    width: 200px;
+    margin: 0 auto 5px auto;
+}
+
+.smallGraphToggleButton{
+    width: 100px;
+}
+
+.floatWrapper{
+    overflow: hidden;
+}
+
+.filter-bg {
+    background-color: #f8f8f8;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.chart-bg {
+    background-color: white;
+    position: relative;
+}
